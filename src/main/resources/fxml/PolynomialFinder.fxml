@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import core.GraphChart?>
+<SplitPane dividerPositions="0.55" fx:controller="controller.PolynomialFinderController"
+           xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+
+    <GraphChart fx:id="chart"/>
+    <VBox>
+        <VBox alignment="TOP_CENTER" spacing="5.0">
+            <HBox alignment="CENTER" spacing="5.0">
+                <Label text="Polynomial coefficients:"/>
+                <TextField minWidth="10.0" fx:id="polynomialInputField"/>
+            </HBox>
+
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </VBox>
+
+        <Separator/>
+
+        <VBox alignment="TOP_CENTER" spacing="5.0">
+            <Label text="Root borders:"/>
+            <GridPane alignment="CENTER" vgap="5">
+                <Label text="Left:"     GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label text="Right:"    GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField              GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="leftBorderInput"/>
+                <TextField              GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="rightBorderInput"/>
+
+                <columnConstraints>
+                    <ColumnConstraints minWidth="50.0"/>
+                    <ColumnConstraints minWidth="75.0" maxWidth="75"/>
+                </columnConstraints>
+            </GridPane>
+
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </VBox>
+
+        <Separator/>
+
+        <VBox alignment="TOP_CENTER" spacing="5.0">
+            <HBox alignment="CENTER" spacing="5.0">
+                <Label text="Limiter (iterations or epsilon):"/>
+                <TextField fx:id="limiterInput"/>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+                <Button text="Calculate using iterations count" onAction="#calculateUsingIterationsHandle"/>
+                <Button text="Calculate using epsilon"          onAction="#calculateUsingEpsilonHandle"/>
+            </HBox>
+
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </VBox>
+
+        <Separator/>
+
+        <VBox alignment="TOP_CENTER" spacing="5.0" VBox.vgrow="ALWAYS">
+            <Label text="Log:"/>
+            <ListView VBox.vgrow="ALWAYS" fx:id="log"/>
+
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </VBox>
+
+    </VBox>
+</SplitPane>
