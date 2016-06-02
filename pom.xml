@@ -21,7 +21,7 @@
 
     <build>
 
-        <finalName>core</finalName>
+        <finalName>PolynomialFinder</finalName>
 
         <plugins>
 
